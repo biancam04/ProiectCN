@@ -1,0 +1,759 @@
+# Loading project alu-project
+# Compile of mux2-1.v was successful.
+# Compile of mux2-1.v was successful.
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1-8bit.v was successful.
+# 3 compiles, 0 failed with no errors. 
+# Compile of mux2-1.v was successful.
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1-8bit.v was successful.
+# Compile of reg-8bit.v was successful.
+# Compile of reg-1bit.v was successful.
+# Compile of adder-8bit.v was successful.
+# 6 compiles, 0 failed with no errors. 
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1.v was successful.
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1-8bit.v was successful.
+# Compile of reg-8bit.v was successful.
+# Compile of reg-1bit.v was successful.
+# Compile of adder-8bit.v was successful.
+# Compile of mod3-count.v was successful.
+# Compile of adder_substractor_datapath.v was successful.
+# Compile of booth_datapath.v was successful.
+# Compile of restoring_divider_datapath.v was successful.
+# 10 compiles, 0 failed with no errors. 
+# Compile of booth_datapath.v was successful.
+# Compile of mux2-1.v was successful.
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1-8bit.v was successful.
+# Compile of reg-8bit.v was successful.
+# Compile of reg-1bit.v was successful.
+# Compile of adder-8bit.v was successful.
+# Compile of mod3-count.v was successful.
+# Compile of adder_substractor_datapath.v was successful.
+# Compile of booth_datapath.v was successful.
+# Compile of restoring_divider_datapath.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of alu.v was successful.
+# 12 compiles, 0 failed with no errors. 
+# Compile of alu_tb.v was successful.
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# Loading work.control_unit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# Loading work.mod3_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# Loading work.mux4_1_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# Loading work.adder_subtractor_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# Loading work.adder_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# Loading work.register_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# Loading work.booth_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# Loading work.register_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# Loading work.restoring_divider_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# ** Error: (vsim-3033) C:/Users/bianc/Desktop/Faculta/CN/alu.v(78): Instantiation of 'mux4_1_8bit' failed. The design unit was not found.
+#         Region: /alu_top_tb/uut
+#         Searched libraries:
+#             C:\Users\bianc\Desktop\Faculta\CN\work
+# Error loading design
+# Compile of mux2-1.v was successful.
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1-8bit.v was successful.
+# Compile of reg-8bit.v was successful.
+# Compile of reg-1bit.v was successful.
+# Compile of adder-8bit.v was successful.
+# Compile of mod3-count.v was successful.
+# Compile of adder_substractor_datapath.v was successful.
+# Compile of booth_datapath.v was successful.
+# Compile of restoring_divider_datapath.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of alu.v was successful.
+# Compile of alu_tb.v was successful.
+# Compile of mux4-1-8bit.v was successful.
+# 14 compiles, 0 failed with no errors. 
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# Loading work.control_unit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# Loading work.mod3_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# Loading work.mux4_1_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# Loading work.adder_subtractor_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# Loading work.adder_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# Loading work.register_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# Loading work.booth_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# Loading work.register_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# Loading work.restoring_divider_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# Loading work.mux4_1_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+# ** Error: (vsim-3063) C:/Users/bianc/Desktop/Faculta/CN/alu.v(56): Port 'Q0' not found in the connected module (6th connection).
+#         Region: /alu_top_tb/uut/BOOTH
+# ** Error: (vsim-3063) C:/Users/bianc/Desktop/Faculta/CN/alu.v(56): Port 'Q_1' not found in the connected module (7th connection).
+#         Region: /alu_top_tb/uut/BOOTH
+# Error loading design
+# Compile of alu.v was successful.
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# Loading work.control_unit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# Loading work.mod3_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# Loading work.mux4_1_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# Loading work.adder_subtractor_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# Loading work.adder_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# Loading work.register_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# Loading work.booth_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# Loading work.register_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# Loading work.restoring_divider_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# Loading work.mux4_1_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+add wave sim:/alu_top_tb/*
+run
+run
+# Compile of alu_tb.v was successful.
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# Loading work.control_unit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# Loading work.mod3_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# Loading work.mux4_1_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# Loading work.adder_subtractor_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# Loading work.adder_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# Loading work.register_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# Loading work.booth_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# Loading work.register_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# Loading work.restoring_divider_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# Loading work.mux4_1_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+add wave sim:/alu_top_tb/*
+run
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# Loading work.control_unit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# Loading work.mod3_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# Loading work.mux4_1_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# Loading work.adder_subtractor_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# Loading work.adder_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# Loading work.register_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# Loading work.booth_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# Loading work.register_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# Loading work.restoring_divider_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# Loading work.mux4_1_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+add wave sim:/alu_top_tb/*
+run
+# Compile of alu_tb.v was successful.
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# Loading work.control_unit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# Loading work.mod3_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# Loading work.mux4_1_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# Loading work.adder_subtractor_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# Loading work.adder_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# Loading work.register_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# Loading work.booth_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# Loading work.register_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# Loading work.restoring_divider_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# Loading work.mux4_1_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+add wave sim:/alu_top_tb/*
+run
+# Compile of mux2-1.v was successful.
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1-8bit.v was successful.
+# Compile of reg-8bit.v was successful.
+# Compile of reg-1bit.v was successful.
+# Compile of adder-8bit.v was successful.
+# Compile of mod3-count.v was successful.
+# Compile of adder_substractor_datapath.v was successful.
+# Compile of booth_datapath.v was successful.
+# Compile of restoring_divider_datapath.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of alu.v was successful.
+# Compile of alu_tb.v was successful.
+# Compile of mux4-1-8bit.v was successful.
+# 14 compiles, 0 failed with no errors. 
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# Loading work.control_unit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# Loading work.mod3_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# Loading work.mux4_1_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# Loading work.adder_subtractor_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# Loading work.adder_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# Loading work.register_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# Loading work.booth_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# Loading work.register_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# Loading work.restoring_divider_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# Loading work.mux4_1_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+add wave sim:/alu_top_tb/uut/*
+run
+add wave sim:/alu_top_tb/uut/*
+run
+run
+restart
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+add wave sim:/alu_top_tb/uut/*
+run
+restart
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+run
+restart
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+run
+add wave sim:/alu_top_tb/*
+restart
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+run
+run
+run
+restart
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+run
+restart
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH/reg_q_1
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+run
+run
+run
+run
+run
+run
+# Compile of mux2-1.v was successful.
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1-8bit.v was successful.
+# Compile of reg-8bit.v was successful.
+# Compile of reg-1bit.v was successful.
+# Compile of adder-8bit.v was successful.
+# Compile of mod3-count.v was successful.
+# Compile of adder_substractor_datapath.v was successful.
+# Compile of booth_datapath.v was successful.
+# Compile of restoring_divider_datapath.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of alu.v was successful.
+# Compile of alu_tb.v was successful.
+# Compile of mux4-1-8bit.v was successful.
+# 14 compiles, 0 failed with no errors. 
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# Loading work.control_unit
+# Loading work.mod3_counter
+# Loading work.mux4_1_1bit
+# Loading work.adder_subtractor_datapath
+# Loading work.adder_8bit
+# Loading work.register_8bit
+# Loading work.booth_datapath
+# Loading work.register_1bit
+# Loading work.restoring_divider_datapath
+# Loading work.mux4_1_8bit
+add wave sim:/alu_top_tb/*
+run
+# Compile of alu_tb.v was successful.
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# Loading work.control_unit
+# Loading work.mod3_counter
+# Loading work.mux4_1_1bit
+# Loading work.adder_subtractor_datapath
+# Loading work.adder_8bit
+# Loading work.register_8bit
+# Loading work.booth_datapath
+# Loading work.register_1bit
+# Loading work.restoring_divider_datapath
+# Loading work.mux4_1_8bit
+add wave sim:/alu_top_tb/*
+run
+# Compile of mod3-count.v failed with 1 errors.
+# Compile of mod3-count.v was successful.
+# Compile of mux2-1.v was successful.
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1-8bit.v was successful.
+# Compile of reg-8bit.v was successful.
+# Compile of reg-1bit.v was successful.
+# Compile of adder-8bit.v was successful.
+# Compile of mod3-count.v was successful.
+# Compile of adder_substractor_datapath.v was successful.
+# Compile of booth_datapath.v was successful.
+# Compile of restoring_divider_datapath.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of alu.v was successful.
+# Compile of alu_tb.v was successful.
+# Compile of mux4-1-8bit.v was successful.
+# 14 compiles, 0 failed with no errors. 
+# Compile of mux2-1.v was successful.
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1-8bit.v was successful.
+# Compile of reg-8bit.v was successful.
+# Compile of reg-1bit.v was successful.
+# Compile of adder-8bit.v was successful.
+# Compile of mod3-count.v was successful.
+# Compile of adder_substractor_datapath.v was successful.
+# Compile of booth_datapath.v was successful.
+# Compile of restoring_divider_datapath.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of alu.v was successful.
+# Compile of alu_tb.v was successful.
+# Compile of mux4-1-8bit.v was successful.
+# 14 compiles, 0 failed with no errors. 
+# Compile of control_unit.v was successful.
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# Loading work.control_unit
+# Loading work.mod3_counter
+# Loading work.mux2_1_1bit
+# Loading work.mux4_1_1bit
+# Loading work.adder_subtractor_datapath
+# Loading work.adder_8bit
+# Loading work.register_8bit
+# Loading work.booth_datapath
+# Loading work.register_1bit
+# Loading work.restoring_divider_datapath
+# Loading work.mux4_1_8bit
+add wave sim:/alu_top_tb/*
+restart
+run
+# Break in Module alu_top_tb at C:/Users/bianc/Desktop/Faculta/CN/alu_tb.v line 95
+run
+# Compile of booth_datapath.v was successful.
+# Compile of mux2-1.v was successful.
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1-8bit.v was successful.
+# Compile of reg-8bit.v was successful.
+# Compile of reg-1bit.v was successful.
+# Compile of adder-8bit.v was successful.
+# Compile of mod3-count.v was successful.
+# Compile of adder_substractor_datapath.v was successful.
+# Compile of booth_datapath.v was successful.
+# Compile of restoring_divider_datapath.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of alu.v was successful.
+# Compile of alu_tb.v was successful.
+# Compile of mux4-1-8bit.v was successful.
+# 14 compiles, 0 failed with no errors. 
+vsim -voptargs=+acc work.control_unit
+# vsim -voptargs=+acc work.control_unit 
+# Loading work.control_unit
+# Loading work.mod3_counter
+# Loading work.mux2_1_1bit
+# Loading work.mux4_1_1bit
+add wave sim:/control_unit/*
+run
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# Loading work.control_unit
+# Loading work.mod3_counter
+# Loading work.mux2_1_1bit
+# Loading work.mux4_1_1bit
+# Loading work.adder_subtractor_datapath
+# Loading work.adder_8bit
+# Loading work.register_8bit
+# Loading work.booth_datapath
+# Loading work.restoring_divider_datapath
+# Loading work.mux4_1_8bit
+add wave sim:/alu_top_tb/*
+restart
+run
+# Break in Module alu_top_tb at C:/Users/bianc/Desktop/Faculta/CN/alu_tb.v line 95
+run
+# Compile of alu_tb.v was successful.
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# Loading work.control_unit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# Loading work.mod3_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# Loading work.mux2_1_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux2_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# Loading work.mux4_1_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C2
+# Loading work.adder_subtractor_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# Loading work.adder_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# Loading work.register_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# Loading work.booth_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# Loading work.restoring_divider_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# Loading work.mux4_1_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+add wave sim:/alu_top_tb/*
+run
+restart
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux2_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C2
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+run
+# Compile of mux2-1.v was successful.
+# Compile of mux4-1.v was successful.
+# Compile of mux2-1-8bit.v was successful.
+# Compile of reg-8bit.v was successful.
+# Compile of reg-1bit.v was successful.
+# Compile of adder-8bit.v was successful.
+# Compile of mod3-count.v was successful.
+# Compile of adder_substractor_datapath.v was successful.
+# Compile of booth_datapath.v was successful.
+# Compile of restoring_divider_datapath.v was successful.
+# Compile of control_unit.v was successful.
+# Compile of alu.v was successful.
+# Compile of alu_tb.v was successful.
+# Compile of mux4-1-8bit.v was successful.
+# 14 compiles, 0 failed with no errors. 
+vsim -voptargs=+acc work.alu_top_tb
+# vsim -voptargs=+acc work.alu_top_tb 
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu_top' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut
+# Loading work.control_unit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'control_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU
+# Loading work.mod3_counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mod3_counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/sequence_counter
+# Loading work.mux2_1_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux2_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C0
+# Loading work.mux4_1_1bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_1bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/CU/mux_C2
+# Loading work.adder_subtractor_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_subtractor_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB
+# Loading work.adder_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'adder_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/adder
+# Loading work.register_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'register_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/ADD_SUB/reg_out
+# Loading work.booth_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'booth_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/BOOTH
+# Loading work.restoring_divider_datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'restoring_divider_datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/DIVIDER
+# Loading work.mux4_1_8bit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1_8bit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /alu_top_tb/uut/OUTMUX
+add wave sim:/alu_top_tb/*
+run

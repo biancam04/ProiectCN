@@ -1,0 +1,229 @@
+m255
+K3
+13
+cModel Technology
+dC:\Windows\System32
+vadder_8bit
+INg9F@AN2boKPRFGb[WSe<2
+Vi89@FiTJ_^`PQdXcZ3F1o2
+Z0 dC:\Users\bianc\Desktop\Faculta\CN
+w1745875556
+8C:/Users/bianc/Desktop/Faculta/CN/adder-8bit.v
+FC:/Users/bianc/Desktop/Faculta/CN/adder-8bit.v
+L0 1
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+!s100 Ag^P@1df17WN0nTA8AHQ31
+!s85 0
+!s101 -O0
+vadder_subtractor_datapath
+IWD2FR^lan9KjbE=fQNhQ[1
+VgCCF=R6B@C2;_9=XcGU0j3
+Z4 dC:\Users\bianc\Desktop\Faculta\CN
+w1745876430
+8C:/Users/bianc/Desktop/Faculta/CN/adder_substractor_datapath.v
+FC:/Users/bianc/Desktop/Faculta/CN/adder_substractor_datapath.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 TCnMlL]^82L:OK<ZQL4ZL0
+!s85 0
+!s101 -O0
+valu_top
+IVfgWh>T9]Cmi_e^Zdf^=00
+VjaaCz68O:H15<eXQEj^XY3
+R4
+w1745881848
+8C:/Users/bianc/Desktop/Faculta/CN/alu.v
+FC:/Users/bianc/Desktop/Faculta/CN/alu.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 `>15a>J2YhW^?J>7AQ5jS3
+!s85 0
+!s101 -O0
+valu_top_tb
+IW5hXce@CM7`Hm?a>2[hTn1
+V[^4EL=5I_aG5<6dOZ>nz03
+R4
+w1745883045
+8C:/Users/bianc/Desktop/Faculta/CN/alu_tb.v
+FC:/Users/bianc/Desktop/Faculta/CN/alu_tb.v
+L0 3
+R1
+r1
+31
+R2
+R3
+!s100 ChU]4AEij:cllD2ETmddP2
+!s85 0
+!s101 -O0
+vbooth_datapath
+IgUM;iEPR^A8_7H=3H1>;J3
+Vg7D:mgXA7>3Olh^EDJ23[3
+R4
+w1745882580
+8C:/Users/bianc/Desktop/Faculta/CN/booth_datapath.v
+FC:/Users/bianc/Desktop/Faculta/CN/booth_datapath.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 _iHE]:]Z7]9[fg31REC]23
+!s85 0
+!s101 -O0
+vcontrol_unit
+Ih6TBO>hbfYV=4COIEajGV0
+V7g_o1Y2S`=7^G7ZUOA^Nb0
+R4
+w1745882670
+8C:/Users/bianc/Desktop/Faculta/CN/control_unit.v
+FC:/Users/bianc/Desktop/Faculta/CN/control_unit.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 Fe29a>P<STUY8Jc6Z`K[32
+!s85 0
+!s101 -O0
+vmod3_counter
+IYEJn@3=dl9<B5`F;YQR@D1
+VGMGFnEH6J>E64a6FSf=D91
+R4
+w1745881972
+8C:/Users/bianc/Desktop/Faculta/CN/mod3-count.v
+FC:/Users/bianc/Desktop/Faculta/CN/mod3-count.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 a0NSf5U]@F0oWij^Uj7OA3
+!s85 0
+!s101 -O0
+vmux2_1_1bit
+Ifg1BLe5j62QLz4>Nc72OX3
+V8EhY:FjTled?dcEM5z_cH2
+R4
+w1745875323
+8C:/Users/bianc/Desktop/Faculta/CN/mux2-1.v
+FC:/Users/bianc/Desktop/Faculta/CN/mux2-1.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 k?HjJH`QJ;m_IfoFjH:Eb3
+!s85 0
+!s101 -O0
+vmux2_1_8bit
+I>7RY8HSVj1J6JNfGIiD1n3
+V^eLXeSfZ0U?2=XiBPLUoB1
+R4
+w1745875356
+8C:/Users/bianc/Desktop/Faculta/CN/mux2-1-8bit.v
+FC:/Users/bianc/Desktop/Faculta/CN/mux2-1-8bit.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 ?4N=zd3GLCnSAl[T7_YG42
+!s85 0
+!s101 -O0
+vmux4_1_1bit
+IGkRWGS8WL?PJ7zj5cQ>zA1
+VT;N<z=azZGS^i:?Pf=1kh1
+R4
+w1745875613
+8C:/Users/bianc/Desktop/Faculta/CN/mux4-1.v
+FC:/Users/bianc/Desktop/Faculta/CN/mux4-1.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 F`JD`3J1C?E^zUOS9MO^W0
+!s85 0
+!s101 -O0
+vmux4_1_8bit
+!s100 kJmjOHNf8f9FjZFZW]TP?2
+IRzM@nBEz>QKcZ^I;J5[4E3
+V0NQ3ckPeT45zfaEo5Wga02
+R4
+w1745879371
+8C:/Users/bianc/Desktop/Faculta/CN/mux4-1-8bit.v
+FC:/Users/bianc/Desktop/Faculta/CN/mux4-1-8bit.v
+L0 1
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+vregister_1bit
+Ilncoh9N>C<oS2n9GSKNI^3
+VR;AW>cYeeW>fNd?FDE;_g1
+R4
+w1745875520
+8C:/Users/bianc/Desktop/Faculta/CN/reg-1bit.v
+FC:/Users/bianc/Desktop/Faculta/CN/reg-1bit.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 L;3_3APANdXJ@M=H20j`F1
+!s85 0
+!s101 -O0
+vregister_8bit
+IPM>]l7Z9jXMckaGgI]A^R1
+VBi0B6g?fchJHe2=RdCL>f2
+R4
+w1745875422
+8C:/Users/bianc/Desktop/Faculta/CN/reg-8bit.v
+FC:/Users/bianc/Desktop/Faculta/CN/reg-8bit.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 1E]goU09@R3O;Del[[I2B2
+!s85 0
+!s101 -O0
+vrestoring_divider_datapath
+IokV_mUXFFDoiNHUCcdN[J1
+VaSbKYDZAT1d8>Vb[NdSY62
+R4
+w1745876507
+8C:/Users/bianc/Desktop/Faculta/CN/restoring_divider_datapath.v
+FC:/Users/bianc/Desktop/Faculta/CN/restoring_divider_datapath.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 R=F3MdSA69^0lfYL6Y3Ie0
+!s85 0
+!s101 -O0

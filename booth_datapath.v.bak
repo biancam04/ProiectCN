@@ -1,0 +1,34 @@
+module booth_datapath (
+    input wire clk,
+    input wire reset,
+    input wire [7:0] inbus,
+    input wire [10:0] control,
+    output wire [7:0] outbus,
+    output wire q0,
+    output wire q_1,
+    output wire [2:0] count
+);
+    wire [7:0] a_out, q_out, m_out, adder_out;
+    wire q_1_out;
+    wire [7:0] mux_m_out;
+    wire [7:0] complemented_m;
+
+    register_8bit reg_a (.clk(clk), .reset(reset), .load(control[0]), .d(adder_out), .q(a_out));
+    register_8bit reg_q (.clk(clk), .reset(reset), .load(control[1]), .d(mux_m_out), .q(q_out));
+    register_8bit reg_m (.clk(clk), .reset(reset), .load(control[2]), .d(inbus), .q(m_out));
+    register_1bit reg_q_1 (.clk(clk), .reset(reset), .load(control[3]), .d(q_out[0]), .q(q_1_out));
+
+    adder_8bit adder (
+        .a(a_out),
+        .b(control[4] ? complemented_m : m_out),
+        .sum(adder_out)
+    );
+
+    assign complemented_m = ~m_out + 1;
+    assign mux_m_out = control[5] ? inbus : q_out;
+
+    assign outbus = control[9] ? a_out : (control[10] ? q_out : 8'b0);
+    assign q0 = q_out[0];
+    assign q_1 = q_1_out;
+    assign count = 3'b000;
+endmodule

@@ -1,0 +1,83 @@
+module alu_top (
+    input wire clk,
+    input wire reset,
+    input wire start,
+    input wire [1:0] opcode,     
+    input wire [7:0] inbus_a,    
+    input wire [7:0] inbus_b,    
+    output wire [7:0] outbus,    
+    output wire done             
+);
+
+   
+    wire [10:0] control;
+    wire [7:0] addsub_out;
+    wire [7:0] booth_out;
+    wire [7:0] div_quotient;
+    wire [7:0] div_remainder;
+    wire Q0, Q_1;
+    wire [2:0] count;
+
+  
+    control_unit CU (
+        .clk(clk),
+        .reset(reset),
+        .start(start),
+        .opcode(opcode),
+        .Q0(Q0),
+        .Q_1(Q_1),
+        .A7(1'b0),      // Can connect A7 flag here if needed
+        .count(count),
+        .control(control),
+        .done(done)
+    );
+
+    
+    adder_subtractor_datapath ADD_SUB (
+        .clk(clk),
+        .reset(reset),
+        .load(control[0]),   
+        .inbus_a(inbus_a),
+        .inbus_b(inbus_b),
+        .sub(opcode[0]),     
+        .outbus(addsub_out)
+    );
+
+    
+    booth_datapath BOOTH (
+        .clk(clk),
+        .reset(reset),
+        .inbus(inbus_b),     
+        .control(control),
+        .outbus(booth_out),
+        .q0(Q0),
+        .q_1(Q_1),
+        .count(count)
+    );
+
+  
+    restoring_divider_datapath DIVIDER (
+        .clk(clk),
+        .reset(reset),
+        .load(control[0]),    
+        .dividend(inbus_a),   
+        .divisor(inbus_b),    
+        .quotient(div_quotient),
+        .remainder(div_remainder)
+    );
+
+    
+    wire [7:0] alu_out_mux;
+    mux4_1_8bit OUTMUX (
+        .d0(addsub_out),    
+        .d1(addsub_out),     
+        .d2(booth_out),      
+        .d3(div_quotient),   
+        .sel(opcode),
+        .y(alu_out_mux)
+    );
+
+   
+    assign outbus = alu_out_mux;
+
+endmodule
