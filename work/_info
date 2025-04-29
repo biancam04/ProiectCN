@@ -52,10 +52,10 @@ R3
 !s85 0
 !s101 -O0
 valu
-I9CXZcf;`T^5aYIRLn?<Qn2
-V=V2K?CSGNeG9kiQhALcID2
+IB7ESzE?hM7[FB0I173W<m1
+Vm^6W9hFS4MWmK^Z1;omzP1
 R4
-w1745952097
+w1745955794
 Z5 8C:/Users/bianc/Desktop/Faculta/CN/alu.v
 Z6 FC:/Users/bianc/Desktop/Faculta/CN/alu.v
 L0 1
@@ -64,25 +64,25 @@ r1
 31
 R2
 R3
-!s100 ^WSU=M4Z2ZD=L94K_SdCC2
+!s100 @Jb@z96SCn`0z3kHaMe@z3
 !s85 0
 !s101 -O0
 valu_tb
-!s100 Hg:^afK=?nJaT2iFmiFZX1
-I1=:Iz3MQ9MGFSJV_JnKNg1
+I6:lQ>1UED;>ZahHfICYzF1
 VL;=kgzZ7GJ2Reg7Z1GkmR2
 R4
-w1745952481
+w1745954497
 Z7 8C:/Users/bianc/Desktop/Faculta/CN/alu_tb.v
 Z8 FC:/Users/bianc/Desktop/Faculta/CN/alu_tb.v
 L0 1
 R1
 r1
-!s85 0
 31
-!s101 -O0
 R2
 R3
+!s100 og6jaRF>4WT;AOOdThhn=1
+!s85 0
+!s101 -O0
 valu_top
 IK?5O[DYV;2Dk<HJjOh:;R3
 VjaaCz68O:H15<eXQEj^XY3
@@ -132,10 +132,10 @@ R3
 !s85 0
 !s101 -O0
 vcomplement
-IkZ8c@_l=H2Ye>eVkY_U_10
+I4dF8CeIA6YXPB3LkEPQe@2
 V3N_IVTIz1BPK;Gf2HM<k]0
 R4
-w1745950282
+w1745953866
 8C:/Users/bianc/Desktop/Faculta/CN/complement.v
 FC:/Users/bianc/Desktop/Faculta/CN/complement.v
 L0 1
@@ -144,25 +144,25 @@ r1
 31
 R2
 R3
-!s100 RTIfzL6Gm8;4]lFW;I9hm0
+!s100 GzHFXPK>m7emhz[ce5KLd2
 !s85 0
 !s101 -O0
 vcontrol_unit
-I[k@Z2hbj2IYOUIPAT<4zd1
+!s100 FnZA7g8TI_jla=CIdV8cV0
+IIEc97Y8abP_DPi4A2Pme22
 V5zZPheQCb2E5A?@Gi7`m20
 R4
-w1745944465
+w1745956061
 8C:/Users/bianc/Desktop/Faculta/CN/control_unit.v
 FC:/Users/bianc/Desktop/Faculta/CN/control_unit.v
 L0 1
 R1
 r1
+!s85 0
 31
+!s101 -O0
 R2
 R3
-!s100 dTaBGNQ_EizRBUc9cLb]X0
-!s85 0
-!s101 -O0
 vcounter
 Ib`]`Do9ff?VekX:PTN[bE3
 V:`JagJQ^m`=P1T[QLF4fY0
@@ -180,10 +180,10 @@ R3
 !s85 0
 !s101 -O0
 vd_ff
-IEz469UIfNI_nPM?`6dNlg2
-V@k_SX^=ZHc`EXhhdjN6K=3
+IGRJ0z3n=TfFL:J6WXhPFF2
+VPnRo4:^Ne7[[5MZa[hF8D0
 R4
-w1745947079
+w1745953465
 8C:/Users/bianc/Desktop/Faculta/CN/d_ff.v
 FC:/Users/bianc/Desktop/Faculta/CN/d_ff.v
 L0 1
@@ -192,7 +192,7 @@ r1
 31
 R2
 R3
-!s100 ;9VdMXIiTzO[HkSN<FQg81
+!s100 ?KHc44MGnfA6PkG3OzOOU1
 !s85 0
 !s101 -O0
 vfull_adder
@@ -388,10 +388,10 @@ R3
 !s85 0
 !s101 -O0
 vshift_reg_lr
-I7iCGdUJb4La^;LfT=T;3e0
-Vc85M7ia3T9=ciX[HONF^X1
+I=nN=d`_K>=N>PRgJGAbZn0
+V8]Qg:loC1I?bYd2P]KajQ1
 R4
-w1745947139
+w1745955727
 8C:/Users/bianc/Desktop/Faculta/CN/shift_reg_lr.v
 FC:/Users/bianc/Desktop/Faculta/CN/shift_reg_lr.v
 L0 1
@@ -400,7 +400,7 @@ r1
 31
 R2
 R3
-!s100 ^AV4_W9kjfWPY`Bd2jffi2
+!s100 lOaYGack1NlW]n4kB1?SX3
 !s85 0
 !s101 -O0
 vshift_reg_right

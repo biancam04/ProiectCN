@@ -19,19 +19,19 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	counter
 
-} {} {}} C:/Users/bianc/Desktop/Faculta/CN/control_unit.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/control_unit.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module control_unit
-
-Top level modules:
-	control_unit
-
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/sr_ff.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/sr_ff.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 -- Compiling module sr_ff
 
 Top level modules:
 	sr_ff
+
+} {} {}} C:/Users/bianc/Desktop/Faculta/CN/alu.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/alu.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module alu
+
+Top level modules:
+	alu
 
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/mux2-1.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/mux2-1.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
@@ -68,6 +68,13 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	d_ff
 
+} {} {}} C:/Users/bianc/Desktop/Faculta/CN/shift_reg_lr.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/shift_reg_lr.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module shift_reg_lr
+
+Top level modules:
+	shift_reg_lr
+
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/full-adder.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/full-adder.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 -- Compiling module full_adder
@@ -81,13 +88,6 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 
 Top level modules:
 	adder
-
-} {} {}} C:/Users/bianc/Desktop/Faculta/CN/shift_reg_lr.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/shift_reg_lr.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module shift_reg_lr
-
-Top level modules:
-	shift_reg_lr
 
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/mux4-1-8bit.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/mux4-1-8bit.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009

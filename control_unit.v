@@ -39,7 +39,7 @@ module control_unit (
 
     // Optimized muxes
     assign C0=theta0&q0;
-    assign C1=theta1&q1;
+    assign C1=theta1&q0;
 
     mux4_1_1bit mux_C2 (.d0(1'b0),   .d1(1'b0),   .d2(theta0&q0), .d3(1'b0),   .sel(opcode), .y(C2));
     mux4_1_1bit mux_C3 (.d0(1'b0),   .d1(1'b0),   .d2(theta0&q1&(~Q0)&Q_1),   .d3(theta1&q1&A7), .sel(opcode), .y(C3));
@@ -48,13 +48,13 @@ module control_unit (
     mux4_1_1bit mux_C6 (.d0(1'b0),   .d1(1'b0),   .d2(count&q1&theta1), .d3(1'b0), .sel(opcode), .y(C6));
     mux4_1_1bit mux_C7 (.d0(1'b0),   .d1(1'b0),   .d2(1'b0), .d3(q1&theta2), .sel(opcode), .y(C7));
     mux4_1_1bit mux_C8 (.d0(1'b0),   .d1(1'b0),   .d2(count&q1&theta1), .d3(q1&theta3&count), .sel(opcode), .y(C8));
-    mux4_1_1bit mux_C9 (.d0(theta2), .d1(theta2), .d2(q2&theta0), .d3(theta0&q2), .sel(opcode), .y(C9));
+    mux4_1_1bit mux_C9 (.d0(1'b0), .d1(1'b0), .d2(theta0&q2), .d3(theta0&q2), .sel(opcode), .y(C9));
     mux4_1_1bit mux_C10(.d0(theta0&q2), .d1(theta0&q2), .d2(theta1&q2), .d3(theta1&q2), .sel(opcode), .y(C10));
 
     assign control = {C10, C9, C8, C7, C6, C5, C4, C3, C2, C1, C0};
 
     // Done logic
-    assign done = (opcode == 2'b10) ? (count == 1) : theta2;
+    assign done = (opcode == 2'b10) ? count : theta2;
     // - If operation is MUL (10), done only after 8 cycles (count reaches 7)
     // - Else (ADD, SUB, DIV), done when FSM reaches Q2
 

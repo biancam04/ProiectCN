@@ -1,13 +1,17 @@
 module alu_tb;
 
     // Testbench signals
-    reg [7:0] in;
+    reg [15:0] in;             // 16-bit packed input: {A, B}
     reg [1:0] op_codes;
     reg valid;
     reg clk;
     reg rst;
     wire [7:0] o;
     wire ready;
+
+    // Extract operands for display
+    wire [7:0] in_a = in[15:8];
+    wire [7:0] in_b = in[7:0];
 
     // Instantiate the DUT (Device Under Test)
     alu uut (
@@ -20,72 +24,62 @@ module alu_tb;
         .ready(ready)
     );
 
-    // Clock generation: 10ns period (100 MHz)
+    // Clock generation: 10ns period
     always #5 clk = ~clk;
 
     initial begin
         $display("Starting ALU Testbench...");
-        $dumpfile("alu_tb.vcd"); // optional if you use GTKWave
+        $dumpfile("alu_tb.vcd");
         $dumpvars(0, alu_tb);
 
-        // Initialize signals
+        // Initialize
         clk = 0;
         rst = 1;
         valid = 0;
-        in = 8'd0;
-        op_codes = 2'b00; // ADD
+        in = 16'd0;
+        op_codes = 2'b00;
 
         // Reset pulse
-        #10;
-        rst = 0;
-        #10;
+        #10; rst = 0; #10;
 
         // === Test 1: ADD ===
-        in = 8'd5;         // load multiplicand (for future use)
-        op_codes = 2'b00;  // opcode 00 = add
+        in = {8'd25, 8'd17}; // A = 25, B = 17
+        op_codes = 2'b00;
         valid = 1;
-        #10;
-        valid = 0;
-
+        #10; valid = 0;
         wait (ready);
-        $display("ADD result: %d", o);
-
+        $display("ADD: A = %d, B = %d ? Result = %d", in_a, in_b, o);
         #20;
 
         // === Test 2: SUB ===
-        in = 8'd10;
-        op_codes = 2'b01;  // opcode 01 = sub
+        in = {8'd40, 8'd15};
+        op_codes = 2'b01;
         valid = 1;
-        #10;
-        valid = 0;
-
+        #10; valid = 0;
         wait (ready);
-        $display("SUB result: %d", o);
-
+        $display("SUB: A = %d, B = %d ? Result = %d", in_a, in_b, o);
         #20;
 
         // === Test 3: MUL ===
-        in = 8'd3;
-        op_codes = 2'b10;  // opcode 10 = mul
+        in = {8'd5, 8'd3};
+        op_codes = 2'b10;
         valid = 1;
-        #10;
-        valid = 0;
-
+        #10; valid = 0;
         wait (ready);
-        $display("MUL result: %d", o);
-
+        $display("MUL: A = %d, B = %d ? Result = %d", in_a, in_b, o);
         #20;
 
         // === Test 4: DIV ===
-        in = 8'd15;
-        op_codes = 2'b11;  // opcode 11 = div
+        in = {8'd20, 8'd4};
+        op_codes = 2'b11;
         valid = 1;
-        #10;
-        valid = 0;
-
+        #10; valid = 0;
         wait (ready);
-        $display("DIV result: %d", o);
+        $display("DIV: A = %d, B = %d ? Result = %d", in_a, in_b, o);
+        #20;
 
+        $display("ALU test complete.");
+        $finish;
     end
 
 endmodule

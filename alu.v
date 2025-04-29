@@ -1,5 +1,5 @@
 module alu (
-  input wire [7:0] in,
+  input wire [15:0] in,
   input wire [1:0] op_codes,
   input wire valid,
   input wire clk,
@@ -8,6 +8,11 @@ module alu (
   output wire ready
 );
 
+  wire [7:0] in_a, in_b;
+  
+  assign in_a=in[15:8];
+  assign in_b=in[7:0];
+  
   // Control signals
   wire [10:0] c;
 
@@ -38,6 +43,7 @@ module alu (
 
   shift_reg_lr reg_A (
     .clk(clk),
+    .rst(rst),
     .mode(mode_a),
     .data_in(outAdder),        // Comes from adder output (muxed via C2)
     .shift_in_left(a[7]),      // For arithmetic right shift
@@ -52,8 +58,9 @@ module alu (
 
   shift_reg_lr reg_Q (
     .clk(clk),
+    .rst(rst),
     .mode(mode_q),
-    .data_in(muxQInput),        // Either input or adder output
+    .data_in(in_a),        // Either input or adder output
     .shift_in_left(a[0]),       // For shift right (Q <<-- A[0])
     .shift_in_right(1'b0),      // Not used
     .data_out(q)
@@ -65,8 +72,9 @@ module alu (
 
   shift_reg_lr reg_M (
     .clk(clk),
+    .rst(rst),
     .mode(mode_m),
-    .data_in(in),               // From inbus
+    .data_in(in_b),               // From inbus
     .shift_in_left(1'b0),
     .shift_in_right(1'b0),
     .data_out(m)
@@ -82,7 +90,7 @@ module alu (
 
   // === Muxes ===
   mux2_1_8bit mux_adder_in (
-    .d0(a), .d1(q), .sel(c[2]), .y(muxAdderIn)
+    .d0(a), .d1(q), .sel(c[4]), .y(muxAdderIn)
   );
 
 
@@ -103,7 +111,7 @@ module alu (
   );
 
   // Mux for Q[-1] serial input
-  mux2_1 mux_q_minus_one (
+  mux2_1_1bit mux_q_minus_one (
     .d0(1'b0),
     .d1(qSerialOut),
     .sel(c[6]),
@@ -111,14 +119,14 @@ module alu (
   );
 
   // Serial inputs for shifting
-  mux2_1 mux_serial_a (
+  mux2_1_1bit mux_serial_a (
     .d0(a[7]),
     .d1(qSerialOut),
     .sel(c[7]),
     .y(muxASerialIn)
   );
 
-  mux2_1 mux_serial_q (
+  mux2_1_1bit mux_serial_q (
     .d0(1'b0),
     .d1(aSerialOut),
     .sel(c[6]),
@@ -157,12 +165,16 @@ module alu (
   );
 
   // === Output Logic ===
-  always @(*) begin
-  case ({c[10], c[9]})
-    2'b01: o = a;
-    2'b10: o = q;
-    default: o = 8'd0;
-  endcase
+  always @(posedge clk or posedge rst) begin
+  if (rst) begin
+    o <= 8'd0;
+  end else if (ready) begin
+    case ({c[10], c[9]})
+      2'b01: o <= a;
+      2'b10: o <= q;
+      default: o <= 8'd0;
+    endcase
+  end
 end
 
 

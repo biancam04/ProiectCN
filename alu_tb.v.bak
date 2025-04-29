@@ -1,7 +1,7 @@
 module alu_tb;
 
     // Testbench signals
-    reg [7:0] in;
+    reg [15:0] in;
     reg [1:0] op_codes;
     reg valid;
     reg clk;
@@ -32,7 +32,7 @@ module alu_tb;
         clk = 0;
         rst = 1;
         valid = 0;
-        in = 8'd0;
+        in = 16'd0;
         op_codes = 2'b00; // ADD
 
         // Reset pulse
@@ -41,10 +41,10 @@ module alu_tb;
         #10;
 
         // === Test 1: ADD ===
-        in = 8'd5;         // load multiplicand (for future use)
+        in = {8'd15, 8'd10};         // load multiplicand (for future use)
         op_codes = 2'b00;  // opcode 00 = add
         valid = 1;
-        #10;
+        #20;
         valid = 0;
 
         wait (ready);
@@ -53,10 +53,10 @@ module alu_tb;
         #20;
 
         // === Test 2: SUB ===
-        in = 8'd10;
+        in = {8'd10, 8'd15};
         op_codes = 2'b01;  // opcode 01 = sub
         valid = 1;
-        #10;
+        #20;
         valid = 0;
 
         wait (ready);
@@ -65,10 +65,10 @@ module alu_tb;
         #20;
 
         // === Test 3: MUL ===
-        in = 8'd3;
+        in = {8'd5, 8'd3};
         op_codes = 2'b10;  // opcode 10 = mul
         valid = 1;
-        #10;
+        #20;
         valid = 0;
 
         wait (ready);
@@ -77,17 +77,15 @@ module alu_tb;
         #20;
 
         // === Test 4: DIV ===
-        in = 8'd15;
+        in = {8'd15, 8'd5};
         op_codes = 2'b11;  // opcode 11 = div
         valid = 1;
-        #10;
+        #20;
         valid = 0;
 
         wait (ready);
         $display("DIV result: %d", o);
 
-        #50;
-        $finish;
     end
 
 endmodule

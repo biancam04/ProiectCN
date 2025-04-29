@@ -1,5 +1,6 @@
 module shift_reg_lr (
     input wire clk,
+    input wire rst,
     input wire [1:0] mode,      // 00: hold, 01: shift right, 10: shift left, 11: load
     input wire [7:0] data_in,   // for parallel load
     input wire shift_in_left,   // for right shift (goes into MSB)
@@ -38,10 +39,12 @@ module shift_reg_lr (
     generate
         for (j = 0; j < 8; j = j + 1) begin : dffs
             d_ff ff (
-                .clk(clk),
-                .d(d[j]),
-                .q(q[j])
-            );
+             .clk(clk),
+             .d(d[j]),
+             .en(1'b1),       // or wire it to a proper enable if needed
+             .rst(rst),      // or wire it to your global/system reset
+             .o(q[j])
+           );
         end
     endgenerate
 

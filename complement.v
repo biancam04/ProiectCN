@@ -16,8 +16,8 @@ module complement (
         .x(inverted),
         .y(8'b00000001),
         .ci(1'b0),
-        .o(twos_comp),
-        .co(carry_dummy)
+        .en(en),
+        .o(twos_comp)
     );
 
     // Output selection
