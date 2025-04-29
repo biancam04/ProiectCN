@@ -9,7 +9,7 @@ module adder (
     wire [7:0] sum_wire;
     wire [7:0] carry;
 
-    // Instantiate full adders
+    // Full adders
     full_adder FA0 (.a(x[0]), .b(y[0]), .cin(ci),         .sum(sum_wire[0]), .cout(carry[0]));
     full_adder FA1 (.a(x[1]), .b(y[1]), .cin(carry[0]),   .sum(sum_wire[1]), .cout(carry[1]));
     full_adder FA2 (.a(x[2]), .b(y[2]), .cin(carry[1]),   .sum(sum_wire[2]), .cout(carry[2]));
@@ -19,7 +19,6 @@ module adder (
     full_adder FA6 (.a(x[6]), .b(y[6]), .cin(carry[5]),   .sum(sum_wire[6]), .cout(carry[6]));
     full_adder FA7 (.a(x[7]), .b(y[7]), .cin(carry[6]),   .sum(sum_wire[7]), .cout(carry[7]));
 
-    // Conditional update
     always @(*) begin
         if (en) begin
             o  = sum_wire;

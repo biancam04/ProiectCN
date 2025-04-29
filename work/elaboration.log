@@ -1,0 +1,38 @@
+Riviera-PRO 2023.04.112.8911(Linux64) 2025-04-29 18:27:31
+
+Elaboration top modules:
+Verilog Module                mux4_1_8bit
+Verilog Module                testbench
+
+
+---------------------------------------------------------------------------------------
+Verilog Module          | Library | Info | Compiler Version      | Compilation Options
+---------------------------------------------------------------------------------------
+mux4_1_8bit             | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+testbench               | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+alu                     | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+d_ff                    | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+shift_register          | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+mux2_1_8bit             | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+complement              | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+mux2_1_1bit             | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+adder                   | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+counter                 | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+control_unit            | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+full_adder              | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+mod4_counter            | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+sr_ff                   | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+mux4_1_1bit             | work    |      | 2023.04.112 (Linux64) | -timescale 1ns/1ns
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Library                 | Comment
+---------------------------------------------------------------------------------------
+work                    | None
+---------------------------------------------------------------------------------------
+
+
+Simulation Options: asim +access+r
+
+
+The performance of simulation is reduced. Version EDU Edition

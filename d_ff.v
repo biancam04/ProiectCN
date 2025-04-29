@@ -3,12 +3,14 @@ module d_ff (
     input wire d,
     input wire en,
     input wire rst,
-    output reg o
+    output o
 );
-    always @(posedge clk) begin
-        if (rst)
-            o <= 1'b0;
+  	reg data;
+  always @(posedge clk) begin
+      if (rst)
+            data <= 1'b0;
         else if (en)
-            o <= d;
+            data <= d;
     end
+  	assign o=data;
 endmodule

@@ -1,52 +1,37 @@
-module shift_reg_lr (
-    input wire clk,
-    input wire rst,
-    input wire [1:0] mode,      // 00: hold, 01: shift right, 10: shift left, 11: load
-    input wire [7:0] data_in,   // for parallel load
-    input wire shift_in_left,   // for right shift (goes into MSB)
-    input wire shift_in_right,  // for left shift (goes into LSB)
-    output wire [7:0] data_out
+module shift_register (
+  input [7 : 0] parallelIn,
+  input serialIn,
+  input lshift,
+  input rshift,
+  input load,
+  input rst,
+  input en,
+  input clk,
+  output reg serialOut,
+  output reg [7 : 0] parallelOut,
 );
-
-    wire [7:0] d;  // Input to each FF
-    wire [7:0] q;  // Output of each FF
-
-    assign data_out = q;
-
-    // MUX logic for each bit (based on mode)
-    assign d[0] = (mode == 2'b00) ? q[0] :                // Hold
-                  (mode == 2'b01) ? q[1] :                // Shift right
-                  (mode == 2'b10) ? shift_in_right :      // Shift left
-                                   data_in[0];            // Load
-
-    assign d[7] = (mode == 2'b00) ? q[7] :
-                  (mode == 2'b01) ? shift_in_left :
-                  (mode == 2'b10) ? q[6] :
-                                   data_in[7];
-
-    genvar i;
-    generate
-        for (i = 1; i < 7; i = i + 1) begin : shift_logic
-            assign d[i] = (mode == 2'b00) ? q[i] :
-                          (mode == 2'b01) ? q[i+1] :
-                          (mode == 2'b10) ? q[i-1] :
-                                           data_in[i];
-        end
-    endgenerate
-
-    // D flip-flops
-    genvar j;
-    generate
-        for (j = 0; j < 8; j = j + 1) begin : dffs
-            d_ff ff (
-             .clk(clk),
-             .d(d[j]),
-             .en(1'b1),       // or wire it to a proper enable if needed
-             .rst(rst),      // or wire it to your global/system reset
-             .o(q[j])
-           );
-        end
-    endgenerate
-
+  
+  wire [7 : 0] outFlipFlop;
+  
+  genvar i;
+  
+  generate
+    
+    for(i = 0;i < 8;i = i + 1) begin : FlipFlop
+      wire d = (load) ? parallelIn[i] : 
+      (rshift & ~lshift) ? ((i == 7) ? serialIn : outFlipFlop[i + 1]) : //Rshift
+      (lshift & ~rshift) ? ((i == 0) ? serialIn : outFlipFlop[i - 1]) : //Lshit	  
+      outFlipFlop[i]; 
+      
+      d_ff FFD(.clk(clk), .rst(rst), .en(en), .d(d), .o(outFlipFlop[i]));
+      
+    end
+    
+  endgenerate
+  
+  assign serialOut = (lshift) ? outFlipFlop[7] : ((rshift) ? outFlipFlop[0] : 0);
+  assign parallelOut = outFlipFlop;
+  
 endmodule
 
+  

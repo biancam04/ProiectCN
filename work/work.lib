@@ -1,0 +1,141 @@
+timestamp=1745965651335
+
+[~A]
+LastVerilogToplevel=testbench
+ModifyID=1
+Version=74
+design.sv_testbench.sv=0*3991*8486
+
+[~MFT]
+0=18|0work.mgf|8486|0
+1=16|1work.mgf|34580|0
+3=32|3work.mgf|18027|0
+
+[$root]
+A/$root=22|||1*0
+BinL64/$root=3*0
+SLP=3*106
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|c73a565f2ade592f8ac1c68f484c921620825b7d6d42b98e219214c226c89856
+
+[adder]
+A/adder=22|../adder.v|1|1*390
+BinL64/adder=3*174
+R=../adder.v|1
+SLP=3*529
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|aa2639a8a5a70ec6691b492f142f0ca2afe2a1dc4cc5772615f24bdaa90e5361
+
+[alu]
+A/alu=22|../alu.v|1|1*3905
+BinL64/alu=3*1881
+R=../alu.v|1
+SLP=3*3087
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|fdc9c85601beb4171a6a25c637e2168efbc5ade0de37f5126566fd9a30153b60
+
+[complement]
+A/complement=22|../complement.v|1|1*16426
+BinL64/complement=3*7644
+R=../complement.v|1
+SLP=3*8187
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|3e71dd03cd47b5451176824822e122a801d9526332285736e9f4b2e43793bf8b37467781a7d8afca1fa3b505607f8efa
+
+[control_unit]
+A/control_unit=22|../control_unit.v|1|1*19398
+BinL64/control_unit=3*9632
+R=../control_unit.v|1
+SLP=3*11705
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|62cdd31518126521df66462af92a6d2b711b818d9a1b2ffa542e7c475ffbd898b809ef28fe5061aeb99d585a7b6de204
+
+[counter]
+A/counter=22|../counter.v|1|1*18354
+BinL64/counter=3*8878
+R=../counter.v|1
+SLP=3*9369
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|ec8a9ceecd40c97da6d5687ce01e262f26527262ddaa47cb266f3a3c4d9b973ae1afcf4d374fd318b80a70bc77803818
+
+[d_ff]
+A/d_ff=22|../d_ff.v|1|1*11617
+BinL64/d_ff=3*4081
+R=../d_ff.v|1
+SLP=3*4487
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|89464b00bc81d1a87e592355c573fa65f5123369548c90253f08e9d892b418dd
+
+[full_adder]
+A/full_adder=22|../full-adder.v|1|1*2909
+BinL64/full_adder=3*1228
+R=../full-adder.v|1
+SLP=3*1659
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|b6bc4c72c6b4732d30366d04e0b9d81ca93b35da59acef6f28d70118359e933e37467781a7d8afca1fa3b505607f8efa
+
+[mod4_counter]
+A/mod4_counter=22|../mod4-count.v|1|1*29965
+BinL64/mod4_counter=3*12913
+R=../mod4-count.v|1
+SLP=3*13513
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|43f06289b0bf009f297afa43864f224829bf53d89761ebd52e595e35b5bb0cebb809ef28fe5061aeb99d585a7b6de204
+
+[mux2_1_1bit]
+A/mux2_1_1bit=22|../mux2-1.v|1|1*17435
+BinL64/mux2_1_1bit=3*8374
+R=../mux2-1.v|1
+SLP=3*8716
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|c9c5889dab0f7914e87671ffb0548972fd3f410b71db2471806f86c820fe6125912f3f21b91dd3754e85808055fd1703
+
+[mux2_1_8bit]
+A/mux2_1_8bit=22|../mux2-1-8bit.v|1|1*15419
+BinL64/mux2_1_8bit=3*7016
+R=../mux2-1-8bit.v|1
+SLP=3*7449
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|2a60dbe2a256879501ca3741d03b2f2c9cfbd62873e4ebd4b76d03d59cef2d4f912f3f21b91dd3754e85808055fd1703
+
+[mux4_1_1bit]
+A/mux4_1_1bit=22|../mux4-1.v|1|1*32216
+BinL64/mux4_1_1bit=3*14511
+R=../mux4-1.v|1
+SLP=3*15241
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|db8d31493b1c9fdab9e50ea4cd7a1afa240ba642bc80b4ee246b0d4d43a2a6fdf87ab02a838b31ff1200d1757220f0fc
+
+[mux4_1_8bit]
+A/mux4_1_8bit=22|../mux4-1-8bit.v|1|1*33348
+BinL64/mux4_1_8bit=3*15491
+R=../mux4-1-8bit.v|1
+SLP=3*16306
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|594992988ff4f04ff699f0cf82b9dde7509b8ea02dbe4605c014c1b837f1fcb9f87ab02a838b31ff1200d1757220f0fc
+
+[shift_register]
+A/shift_register=22|../shift_reg_lr.v|1|1*12880
+BinL64/shift_register=3*4729
+R=../shift_reg_lr.v|1
+SLP=3*6486
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|8b0936a0db3d513519093826821bfa451c298ca80f5e6fe41f050e165e937210bef60bb4dc78e00bec7e716c8dc0e5a1
+
+[sr_ff]
+A/sr_ff=22|../sr_ff.v|1|1*31064
+BinL64/sr_ff=3*13927
+R=../sr_ff.v|1
+SLP=3*14266
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|d3bb88d5e6b48d16d65861f395341d09b0321a57743b4cddb23378ed2fc79329
+
+[testbench]
+A/testbench=22|../testbench.sv|1|1*34580
+BinL64/testbench=3*16585
+R=../testbench.sv|1
+SLP=3*18027
+Version=2023.04.112 (Linux64)|00000012789cd32dc9cc4d2d4e4ecc495530cc2bd60762003d9c0658|9c08cd30fe0f9550ac0d051aa32c9ba5030c5f4de3ffa3c97f58c5528f1d791364d60228e55d6f0151ed0c966e6b22ed
+
+[~U]
+$root=12|0*0|
+adder=12|0*278|
+alu=12|0*741|
+complement=12|0*1851|
+control_unit=12|0*2480|
+counter=12|0*2268|
+d_ff=12|0*1150|
+full_adder=12|0*525|
+mod4_counter=12|0*2834|
+mux2_1_1bit=12|0*2059|
+mux2_1_8bit=12|0*1635|
+mux4_1_1bit=12|0*3278|
+mux4_1_8bit=12|0*3506||0x10
+shift_register=12|0*1353|
+sr_ff=12|0*3069|
+testbench=12|0*3736||0x10

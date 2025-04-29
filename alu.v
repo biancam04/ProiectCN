@@ -13,20 +13,18 @@ module alu (
   assign in_a=in[15:8];
   assign in_b=in[7:0];
   
-  // Control signals
   wire [10:0] c;
 
-  // Internal wires
   wire [7:0] q, m, a;
   wire [7:0] outAdder, complementedM;
-  wire [7:0] muxAdderIn, muxQInput, muxAInput;
+  wire [7:0] muxAdderIn, muxQInput, muxAInput, inputQ;
   wire muxQ_1, muxASerialIn, muxQSerialIn;
 
   wire q_1_out;
   wire [2:0] count;
   wire aSerialOut, qSerialOut;
 
-  // === Q[-1] ===
+  // Q[-1] 
   d_ff Q_minus_one_ff (
     .clk(clk),
     .d(muxQ_1),
@@ -35,66 +33,64 @@ module alu (
     .o(q_1_out)
   );
 
-  wire [1:0] mode_a;
-  assign mode_a = (c[0] || c[3]) ? 2'b11 :         // Load
-                (c[7])         ? 2'b10 :         // Shift left
-                (c[6])         ? 2'b01 :         // Shift right
-                                 2'b00;          // Hold
-
-  shift_reg_lr reg_A (
+ 	// A register
+	shift_register reg_A (
     .clk(clk),
-    .rst(rst),
-    .mode(mode_a),
-    .data_in(outAdder),        // Comes from adder output (muxed via C2)
-    .shift_in_left(a[7]),      // For arithmetic right shift
-    .shift_in_right(q[0]),     // For left shift (A <<, MSB from Q[0])
-    .data_out(a)
-  );
+      .rst(rst | c[0]),
+    .en(c[3] | c[6] | c[7] ),           
+    .load(c[3] ),                       
+    .lshift(c[7]),                            
+    .rshift(c[6]),                            
+    .serialIn(q[0]),                          
+    .parallelIn(outAdder),                   
+    .serialOut(aSerialOut),
+    .parallelOut(a)
+	);
   
-  wire [1:0] mode_q;
-  assign mode_q = (valid || c[4]) ? 2'b11 :
-                (c[6])           ? 2'b01 :
-                                   2'b00;
+  mux2_1_8bit muxsum (.d0(in_a), .d1(outAdder), .sel(c[4]), .y(inputQ));
 
-  shift_reg_lr reg_Q (
+	// Q register
+	shift_register reg_Q (
     .clk(clk),
     .rst(rst),
-    .mode(mode_q),
-    .data_in(in_a),        // Either input or adder output
-    .shift_in_left(a[0]),       // For shift right (Q <<-- A[0])
-    .shift_in_right(1'b0),      // Not used
-    .data_out(q)
-  );
+    .en(valid | c[4] | c[6]),                 
+    .load(valid | c[4]),                      
+    .lshift(1'b0),                           
+    .rshift(c[6]),                            
+    .serialIn(a[0]),                          
+    .parallelIn(inputQ),                      
+    .serialOut(qSerialOut),
+    .parallelOut(q)
+	);
 
-  
-  wire [1:0] mode_m;
-  assign mode_m = c[1] ? 2'b11 : 2'b00;
-
-  shift_reg_lr reg_M (
+	// M register
+	shift_register reg_M (
     .clk(clk),
     .rst(rst),
-    .mode(mode_m),
-    .data_in(in_b),               // From inbus
-    .shift_in_left(1'b0),
-    .shift_in_right(1'b0),
-    .data_out(m)
-  );
+    .en(c[1]),                                
+    .load(c[1]),
+    .lshift(1'b0),
+    .rshift(1'b0),
+    .serialIn(1'b0),
+    .parallelIn(in_b),
+    .serialOut(),                             
+    .parallelOut(m)
+	);
 
 
-  // === Complement M ===
+  // Complement M
   complement complementM(
     .in(m),
     .en(c[5]),
     .out(complementedM)
   );
 
-  // === Muxes ===
+  // Muxes
   mux2_1_8bit mux_adder_in (
     .d0(a), .d1(q), .sel(c[4]), .y(muxAdderIn)
   );
 
 
-  // Mux for Q input: input vs. adder output
   mux2_1_8bit mux_q_input (
     .d0(in),
     .d1(outAdder),
@@ -102,7 +98,6 @@ module alu (
     .y(muxQInput)
   );
 
-  // Mux for A input: zero vs adder output
   mux2_1_8bit mux_a_input (
     .d0(8'd0),
     .d1(outAdder),
@@ -110,7 +105,6 @@ module alu (
     .y(muxAInput)
   );
 
-  // Mux for Q[-1] serial input
   mux2_1_1bit mux_q_minus_one (
     .d0(1'b0),
     .d1(qSerialOut),
@@ -118,7 +112,7 @@ module alu (
     .y(muxQ_1)
   );
 
-  // Serial inputs for shifting
+  
   mux2_1_1bit mux_serial_a (
     .d0(a[7]),
     .d1(qSerialOut),
@@ -133,7 +127,7 @@ module alu (
     .y(muxQSerialIn)
   );
 
-  // === Parallel Adder ===
+  // Parallel Adder
   adder ALU_Adder (
     .x(muxAdderIn),
     .y(complementedM),
@@ -142,7 +136,7 @@ module alu (
     .o(outAdder)
   );
 
-  // === Counter ===
+  // Counter
   counter Count (
     .clk(clk),
     .rst(c[0]),
@@ -150,7 +144,7 @@ module alu (
     .o(count)
   );
 
-  // === Control Unit ===
+  // Control Unit
   control_unit Control (
     .clk(clk),
     .reset(rst),
@@ -158,24 +152,19 @@ module alu (
     .Q0(q[0]),
     .Q_1(q_1_out),
     .A7(a[7]),
-    .count((count == 3'd7)),
+    .count((count[0]&count[1]&count[2])),
     .opcode(op_codes),
     .control(c),
     .done(ready)
   );
 
-  // === Output Logic ===
-  always @(posedge clk or posedge rst) begin
-  if (rst) begin
-    o <= 8'd0;
-  end else if (ready) begin
-    case ({c[10], c[9]})
-      2'b01: o <= a;
-      2'b10: o <= q;
-      default: o <= 8'd0;
-    endcase
+  // Output
+  always @(*) begin
+    if (c[10])
+      o = q;
+    else if(c[9])
+      o = a;
   end
-end
 
 
 endmodule

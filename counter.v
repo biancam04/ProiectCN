@@ -1,8 +1,8 @@
 module counter (
-    input  wire clk,     // Clock input
-    input  wire rst,     // Active-high synchronous reset
-    input  wire en,      // Enable counting
-    output reg  [2:0] o  // 3-bit count output
+    input  wire clk,     
+    input  wire rst,   
+    input  wire en,      
+    output reg  [2:0] o 
 );
 
     always @(posedge clk) begin

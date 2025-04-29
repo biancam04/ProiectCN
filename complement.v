@@ -1,27 +1,10 @@
-module complement (
-    input  wire [7:0] in,   // input number
-    input  wire       en,   // enable: 1 to output complement, 0 to pass through
-    output wire [7:0] out   // result: either in or ~in + 1
+module complement(
+  input [7 : 0] in,
+  input en,
+  output reg [7 : 0] out
 );
 
-    wire [7:0] inverted;
-    wire [7:0] twos_comp;
-    wire       carry_dummy;
-
-    // Bitwise inversion
-    assign inverted = ~in;
-
-    // Two's complement = ~in + 1
-    adder add_one (
-        .x(inverted),
-        .y(8'b00000001),
-        .ci(1'b0),
-        .en(en),
-        .o(twos_comp)
-    );
-
-    // Output selection
-    assign out = en ? twos_comp : in;
-
+  assign out = en ? ~in : in;
+ 
 endmodule
 
