@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module alu_top_tb;
 
     // Inputs
@@ -12,7 +14,7 @@ module alu_top_tb;
     wire [7:0] outbus;
     wire done;
 
-    // Instantiate ALU Top
+    // Instantiate the ALU Top
     alu_top uut (
         .clk(clk),
         .reset(reset),
@@ -24,84 +26,72 @@ module alu_top_tb;
         .done(done)
     );
 
-    // Clock generation
+    // Clock generation: 10ns period (100 MHz)
     initial begin
         clk = 0;
-        forever #5 clk = ~clk;  // 100MHz clock, period 10ns
+        forever #5 clk = ~clk;
     end
 
-    // Stimulus
+    // Test sequence
     initial begin
-        // Initial values
+        // Initialize
         reset = 1;
         start = 0;
         opcode = 2'b00;
         inbus_a = 8'd0;
         inbus_b = 8'd0;
-
-        // Hold reset
+        
+        // Hold reset for a while
         #20;
         reset = 0;
-        #20;
 
-        // ====================
-        // TEST 1: ADDITION
-        // 15 + 10 = 25
-        // ====================
-        inbus_a = 8'd15;
-        inbus_b = 8'd10;
-        opcode = 2'b00;  // ADD
-        #10 start_pulse();
-        wait (done);
-        #20;
-
-        // ====================
-        // TEST 2: SUBTRACTION
-        // 25 - 10 = 15
-        // ====================
-        inbus_a = 8'd25;
-        inbus_b = 8'd10;
-        opcode = 2'b01;  // SUB
-        #10 start_pulse();
-        wait (done);
-        #20;
-
-        // ====================
-        // TEST 3: MULTIPLICATION
-        // 5 * 6 = 30
-        // ====================
-        inbus_a = 8'd0;  // Booth uses only inbus_b
-        inbus_b = 8'd6;  // Multiplier
-        opcode = 2'b10;  // MUL
-        #10 start_pulse();
-        wait (done);
-        #20;
-
-        // ====================
-        // TEST 4: DIVISION
-        // 30 / 5 = 6
-        // ====================
-        inbus_a = 8'd30;  // Dividend
-        inbus_b = 8'd5;   // Divisor
-        opcode = 2'b11;  // DIV
-        #10 start_pulse();
-        wait (done);
-        #20;
-
-        // End simulation
-        $stop;
-    end
-
-    // Start pulse procedure
-    task start_pulse;
-    begin
+        // === Test 1: ADD ===
+        #10;
+        opcode = 2'b00;    // ADD
+        inbus_a = 8'd15;   // 15
+        inbus_b = 8'd10;   // +10
         start = 1;
         #10;
         start = 0;
+        wait(done);
+        $display("ADD Test: 15 + 10 = %d (outbus=%d)", 15+10, outbus);
+
+        // === Test 2: SUB ===
+        #50;
+        opcode = 2'b01;    // SUB
+        inbus_a = 8'd20;   // 20
+        inbus_b = 8'd8;    // -8
+        start = 1;
+        #10;
+        start = 0;
+        wait(done);
+        $display("SUB Test: 20 - 8 = %d (outbus=%d)", 20-8, outbus);
+
+        // === Test 3: MUL ===
+        #50;
+        opcode = 2'b10;    // MUL
+        inbus_a = 8'd5;    // 5
+        inbus_b = 8'd6;    // x6
+        start = 1;
+        #10;
+        start = 0;
+        wait(done);
+        $display("MUL Test: 5 * 6 = %d (outbus=%d)", 5*6, outbus);
+
+        // === Test 4: DIV ===
+        #50;
+        opcode = 2'b11;    // DIV
+        inbus_a = 8'd25;   // 25
+        inbus_b = 8'd5;    // ÷5
+        start = 1;
+        #10;
+        start = 0;
+        wait(done);
+        $display("DIV Test: 25 / 5 = %d (outbus=%d)", 25/5, outbus);
+
+        // Finish simulation
+        #100;
+        $finish;
     end
-    endtask
 
 endmodule
-
-
-

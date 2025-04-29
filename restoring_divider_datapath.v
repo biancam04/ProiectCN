@@ -6,49 +6,54 @@ module restoring_divider_datapath (
     input wire [7:0] divisor,
     output reg [7:0] quotient,
     output reg [7:0] remainder,
-    output reg done
+    output reg done,
+    output wire count,      // already ok
+    output wire [7:0] A     // <<== add output A
 );
 
-    reg [7:0] A;
+    reg [7:0] A_reg;
     reg [7:0] Q;
     reg [7:0] M;
-    reg [3:0] count;
+    reg [2:0] counter_internal;
+
+    assign count = (counter_internal == 3'd7) ? 1'b1 : 1'b0;
+    assign A = A_reg;
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            A <= 8'd0;
+            A_reg <= 8'd0;
             Q <= 8'd0;
             M <= 8'd0;
-            count <= 4'd0;
+            counter_internal <= 3'd0;
             quotient <= 8'd0;
             remainder <= 8'd0;
             done <= 0;
         end
         else if (load) begin
-            A <= 8'd0;
+            A_reg <= 8'd0;
             Q <= dividend;
             M <= divisor;
-            count <= 4'd8; // 8 cycles
+            counter_internal <= 3'd0;
             done <= 0;
         end
-        else if (count != 0) begin
-            {A, Q} <= {A, Q} << 1;
-            A <= A - M;
-            if (A[7]) begin
+        else if (counter_internal < 3'd7) begin
+            {A_reg, Q} <= {A_reg, Q} << 1;
+            A_reg <= A_reg - M;
+            if (A_reg[7]) begin
                 Q[0] <= 1'b0;
-                A <= A + M;
+                A_reg <= A_reg + M;
             end else begin
                 Q[0] <= 1'b1;
             end
-            count <= count - 1;
+            counter_internal <= counter_internal + 1;
             done <= 0;
         end
         else begin
-            // Final output assignment when done
             quotient <= Q;
-            remainder <= A;
+            remainder <= A_reg;
             done <= 1;
         end
     end
 
 endmodule
+

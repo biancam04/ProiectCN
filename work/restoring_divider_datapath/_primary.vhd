@@ -9,6 +9,8 @@ entity restoring_divider_datapath is
         divisor         : in     vl_logic_vector(7 downto 0);
         quotient        : out    vl_logic_vector(7 downto 0);
         remainder       : out    vl_logic_vector(7 downto 0);
-        done            : out    vl_logic
+        done            : out    vl_logic;
+        count           : out    vl_logic;
+        A               : out    vl_logic_vector(7 downto 0)
     );
 end restoring_divider_datapath;

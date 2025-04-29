@@ -36,26 +36,26 @@ R3
 !s85 0
 !s101 -O0
 valu_top
-I8YiU8D8>oGY:IU@MA?hdd0
+IK?5O[DYV;2Dk<HJjOh:;R3
 VjaaCz68O:H15<eXQEj^XY3
 R4
-w1745885797
+w1745944792
 8C:/Users/bianc/Desktop/Faculta/CN/alu.v
 FC:/Users/bianc/Desktop/Faculta/CN/alu.v
-L0 2
+L0 1
 R1
 r1
 31
 R2
 R3
-!s100 0Hck2fAe@CTf5dTPQaU4P3
+!s100 Qb1>Flg8>?2zfE2m[oFG^3
 !s85 0
 !s101 -O0
 valu_top_tb
-IT75VAPfmNhSCAYkW0OaO>0
+Ia]VE];H?ncYDJ50Wf]hg:3
 V[^4EL=5I_aG5<6dOZ>nz03
 R4
-w1745885883
+w1745945017
 8C:/Users/bianc/Desktop/Faculta/CN/alu_tb.v
 FC:/Users/bianc/Desktop/Faculta/CN/alu_tb.v
 L0 1
@@ -64,30 +64,30 @@ r1
 31
 R2
 R3
-!s100 [Xc2kP<eI3RB_P;<BiZ>K1
+!s100 YXMjl5b7OlHGAQk8F4lce1
 !s85 0
 !s101 -O0
 vbooth_datapath
-IA:F><3NdhKDaOXU`JF^`V2
-VMC51f=;;0V`kKZ;J0SkPP0
+I6iAZN]c_gLV[fVW5Z0L0A3
+V7MSBUGDY_Td^_T?oOa3Fg1
 R4
-w1745885590
+w1745945110
 8C:/Users/bianc/Desktop/Faculta/CN/booth_datapath.v
 FC:/Users/bianc/Desktop/Faculta/CN/booth_datapath.v
-L0 2
+L0 1
 R1
 r1
 31
 R2
 R3
-!s100 kcZ?j`1=C7mMKMRebPEKC3
+!s100 n`e;]FOiZk;HHJ7BzOzbF3
 !s85 0
 !s101 -O0
 vcontrol_unit
-Ih6TBO>hbfYV=4COIEajGV0
-V7g_o1Y2S`=7^G7ZUOA^Nb0
+I[k@Z2hbj2IYOUIPAT<4zd1
+V5zZPheQCb2E5A?@Gi7`m20
 R4
-w1745882670
+w1745944465
 8C:/Users/bianc/Desktop/Faculta/CN/control_unit.v
 FC:/Users/bianc/Desktop/Faculta/CN/control_unit.v
 L0 1
@@ -96,7 +96,7 @@ r1
 31
 R2
 R3
-!s100 Fe29a>P<STUY8Jc6Z`K[32
+!s100 dTaBGNQ_EizRBUc9cLb]X0
 !s85 0
 !s101 -O0
 vmod3_counter
@@ -115,11 +115,27 @@ R3
 !s100 a0NSf5U]@F0oWij^Uj7OA3
 !s85 0
 !s101 -O0
+vmod4_counter
+!s100 0M1VbDWK@mWPInGfmhkmF0
+IQ7NPVAOMnkDgFfdmiPOdn0
+V^lkjCj5FH6:R^B7Wh`EDY0
+R4
+w1745942126
+8C:/Users/bianc/Desktop/Faculta/CN/mod4-count.v
+FC:/Users/bianc/Desktop/Faculta/CN/mod4-count.v
+L0 1
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
 vmux2_1_1bit
 Ifg1BLe5j62QLz4>Nc72OX3
 V8EhY:FjTled?dcEM5z_cH2
 R4
-w1745875323
+w1745944375
 8C:/Users/bianc/Desktop/Faculta/CN/mux2-1.v
 FC:/Users/bianc/Desktop/Faculta/CN/mux2-1.v
 L0 1
@@ -164,7 +180,6 @@ R3
 !s85 0
 !s101 -O0
 vmux4_1_8bit
-!s100 kJmjOHNf8f9FjZFZW]TP?2
 IRzM@nBEz>QKcZ^I;J5[4E3
 V0NQ3ckPeT45zfaEo5Wga02
 R4
@@ -174,11 +189,12 @@ FC:/Users/bianc/Desktop/Faculta/CN/mux4-1-8bit.v
 L0 1
 R1
 r1
-!s85 0
 31
-!s101 -O0
 R2
 R3
+!s100 kJmjOHNf8f9FjZFZW]TP?2
+!s85 0
+!s101 -O0
 vregister_1bit
 Ilncoh9N>C<oS2n9GSKNI^3
 VR;AW>cYeeW>fNd?FDE;_g1
@@ -212,10 +228,10 @@ R3
 !s85 0
 !s101 -O0
 vrestoring_divider_datapath
-Id1h3SB;:a3cIhjaFhL?8m3
-V<YH^I8k@`l]GDEWW1;1>o1
+IH1jk^J4i7`0D7aZVe@eMn1
+V:YOlACDaBXmEU?`F6VVAX1
 R4
-w1745885044
+w1745945141
 8C:/Users/bianc/Desktop/Faculta/CN/restoring_divider_datapath.v
 FC:/Users/bianc/Desktop/Faculta/CN/restoring_divider_datapath.v
 L0 1
@@ -224,6 +240,22 @@ r1
 31
 R2
 R3
-!s100 C`LEK7^lEkM^^IiLLkbQ73
+!s100 U>bXokDWmdJhf:j`>2:453
+!s85 0
+!s101 -O0
+vsr_ff
+INzabKlIR;>^;LNBH=E^?B2
+VW^i>=YPSfG3So[CMz:ADQ2
+R4
+w1745941363
+8C:/Users/bianc/Desktop/Faculta/CN/sr_ff.v
+FC:/Users/bianc/Desktop/Faculta/CN/sr_ff.v
+L0 1
+R1
+r1
+31
+R2
+R3
+!s100 kGm8^F]@mf5El<SoPG;al0
 !s85 0
 !s101 -O0

@@ -1,4 +1,3 @@
-// Top-level ALU module (Updated)
 module alu_top (
     input wire clk,
     input wire reset,
@@ -20,16 +19,28 @@ module alu_top (
     wire booth_done;
     wire CU_done;
 
+    wire booth_Q0, booth_Q_1;
+    wire booth_count;
+    wire div_count;
+    wire [7:0] div_A; // For A7
+    wire div_A7;
+    
+    // Select count signal depending on operation
+    wire count_mux;
+    assign count_mux = (opcode == 2'b10) ? booth_count : div_count;
+    // Select A7 signal (only needed for division)
+    assign div_A7 = div_A[7];
+
     // Control Unit instantiation
     control_unit CU (
         .clk(clk),
         .reset(reset),
         .start(start),
         .opcode(opcode),
-        .Q0(1'b0),     // No longer used
-        .Q_1(1'b0),    // No longer used
-        .A7(1'b0),     // No longer used
-        .count(3'b000),
+        .Q0(booth_Q0),
+        .Q_1(booth_Q_1),
+        .A7(div_A7),
+        .count(count_mux),
         .control(control),
         .done(CU_done)
     );
@@ -53,7 +64,10 @@ module alu_top (
         .multiplicand(inbus_b),
         .multiplier(inbus_a),
         .product(booth_out),
-        .done(booth_done)
+        .done(booth_done),
+        .count(booth_count),
+        .Q0(booth_Q0),
+        .Q_1(booth_Q_1)
     );
 
     // Restoring Divider Datapath instantiation
@@ -64,7 +78,10 @@ module alu_top (
         .dividend(inbus_a),
         .divisor(inbus_b),
         .quotient(div_quotient),
-        .remainder(div_remainder)
+        .remainder(div_remainder),
+        .done(), // divider done not needed separately
+        .count(div_count),
+        .A(div_A) // New output A (to get A[7] for A7)
     );
 
     // Output MUX
