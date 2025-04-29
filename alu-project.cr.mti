@@ -5,19 +5,19 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	register_1bit
 
-} {} {}} C:/Users/bianc/Desktop/Faculta/CN/adder-8bit.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/adder-8bit.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module adder_8bit
-
-Top level modules:
-	adder_8bit
-
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/alu_tb.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/alu_tb.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module alu_top_tb
+-- Compiling module alu_tb
 
 Top level modules:
-	alu_top_tb
+	alu_tb
+
+} {} {}} C:/Users/bianc/Desktop/Faculta/CN/counter.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/counter.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module counter
+
+Top level modules:
+	counter
 
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/control_unit.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/control_unit.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
@@ -33,40 +33,19 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	sr_ff
 
-} {} {}} C:/Users/bianc/Desktop/Faculta/CN/restoring_divider_datapath.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/restoring_divider_datapath.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module restoring_divider_datapath
-
-Top level modules:
-	restoring_divider_datapath
-
-} {} {}} C:/Users/bianc/Desktop/Faculta/CN/adder_substractor_datapath.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/adder_substractor_datapath.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module adder_subtractor_datapath
-
-Top level modules:
-	adder_subtractor_datapath
-
-} {} {}} C:/Users/bianc/Desktop/Faculta/CN/booth_datapath.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/booth_datapath.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module booth_datapath
-
-Top level modules:
-	booth_datapath
-
-} {} {}} C:/Users/bianc/Desktop/Faculta/CN/alu.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/alu.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module alu_top
-
-Top level modules:
-	alu_top
-
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/mux2-1.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/mux2-1.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 -- Compiling module mux2_1_1bit
 
 Top level modules:
 	mux2_1_1bit
+
+} {} {}} C:/Users/bianc/Desktop/Faculta/CN/complement.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/complement.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module complement
+
+Top level modules:
+	complement
 
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/mux4-1.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/mux4-1.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
@@ -82,6 +61,34 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	mux2_1_8bit
 
+} {} {}} C:/Users/bianc/Desktop/Faculta/CN/d_ff.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/d_ff.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module d_ff
+
+Top level modules:
+	d_ff
+
+} {} {}} C:/Users/bianc/Desktop/Faculta/CN/full-adder.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/full-adder.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module full_adder
+
+Top level modules:
+	full_adder
+
+} {} {}} C:/Users/bianc/Desktop/Faculta/CN/adder.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/adder.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module adder
+
+Top level modules:
+	adder
+
+} {} {}} C:/Users/bianc/Desktop/Faculta/CN/shift_reg_lr.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/shift_reg_lr.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module shift_reg_lr
+
+Top level modules:
+	shift_reg_lr
+
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/mux4-1-8bit.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/mux4-1-8bit.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 -- Compiling module mux4_1_8bit
@@ -89,18 +96,18 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	mux4_1_8bit
 
-} {} {}} C:/Users/bianc/Desktop/Faculta/CN/mod4-count.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/mod4-count.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module mod4_counter
-
-Top level modules:
-	mod4_counter
-
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/reg-8bit.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/reg-8bit.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 -- Compiling module register_8bit
 
 Top level modules:
 	register_8bit
+
+} {} {}} C:/Users/bianc/Desktop/Faculta/CN/mod4-count.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/mod4-count.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module mod4_counter
+
+Top level modules:
+	mod4_counter
 
 } {} {}}

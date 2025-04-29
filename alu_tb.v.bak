@@ -1,97 +1,94 @@
-`timescale 1ns / 1ps
+module alu_tb;
 
-module alu_top_tb;
-
-    // Inputs
+    // Testbench signals
+    reg [7:0] in;
+    reg [1:0] op_codes;
+    reg valid;
     reg clk;
-    reg reset;
-    reg start;
-    reg [1:0] opcode;
-    reg [7:0] inbus_a;
-    reg [7:0] inbus_b;
+    reg rst;
+    wire [7:0] o;
+    wire ready;
 
-    // Outputs
-    wire [7:0] outbus;
-    wire done;
-
-    // Instantiate the ALU Top
-    alu_top uut (
+    // Instantiate the DUT (Device Under Test)
+    alu uut (
+        .in(in),
+        .op_codes(op_codes),
+        .valid(valid),
         .clk(clk),
-        .reset(reset),
-        .start(start),
-        .opcode(opcode),
-        .inbus_a(inbus_a),
-        .inbus_b(inbus_b),
-        .outbus(outbus),
-        .done(done)
+        .rst(rst),
+        .o(o),
+        .ready(ready)
     );
 
     // Clock generation: 10ns period (100 MHz)
-    initial begin
-        clk = 0;
-        forever #5 clk = ~clk;
-    end
+    always #5 clk = ~clk;
 
-    // Test sequence
     initial begin
-        // Initialize
-        reset = 1;
-        start = 0;
-        opcode = 2'b00;
-        inbus_a = 8'd0;
-        inbus_b = 8'd0;
-        
-        // Hold reset for a while
-        #20;
-        reset = 0;
+        $display("Starting ALU Testbench...");
+        $dumpfile("alu_tb.vcd"); // optional if you use GTKWave
+        $dumpvars(0, alu_tb);
+
+        // Initialize signals
+        clk = 0;
+        rst = 1;
+        valid = 0;
+        in = 8'd0;
+        op_codes = 2'b00; // ADD
+
+        // Reset pulse
+        #10;
+        rst = 0;
+        #10;
 
         // === Test 1: ADD ===
+        in = 8'd5;         // load multiplicand (for future use)
+        op_codes = 2'b00;  // opcode 00 = add
+        valid = 1;
         #10;
-        opcode = 2'b00;    // ADD
-        inbus_a = 8'd15;   // 15
-        inbus_b = 8'd10;   // +10
-        start = 1;
-        #10;
-        start = 0;
-        wait(done);
-        $display("ADD Test: 15 + 10 = %d (outbus=%d)", 15+10, outbus);
+        valid = 0;
+
+        wait (ready);
+        $display("ADD result: %d", o);
+
+        #20;
 
         // === Test 2: SUB ===
-        #50;
-        opcode = 2'b01;    // SUB
-        inbus_a = 8'd20;   // 20
-        inbus_b = 8'd8;    // -8
-        start = 1;
+        in = 8'd10;
+        op_codes = 2'b01;  // opcode 01 = sub
+        valid = 1;
         #10;
-        start = 0;
-        wait(done);
-        $display("SUB Test: 20 - 8 = %d (outbus=%d)", 20-8, outbus);
+        valid = 0;
+
+        wait (ready);
+        $display("SUB result: %d", o);
+
+        #20;
 
         // === Test 3: MUL ===
-        #50;
-        opcode = 2'b10;    // MUL
-        inbus_a = 8'd5;    // 5
-        inbus_b = 8'd6;    // x6
-        start = 1;
+        in = 8'd3;
+        op_codes = 2'b10;  // opcode 10 = mul
+        valid = 1;
         #10;
-        start = 0;
-        wait(done);
-        $display("MUL Test: 5 * 6 = %d (outbus=%d)", 5*6, outbus);
+        valid = 0;
+
+        wait (ready);
+        $display("MUL result: %d", o);
+
+        #20;
 
         // === Test 4: DIV ===
-        #50;
-        opcode = 2'b11;    // DIV
-        inbus_a = 8'd25;   // 25
-        inbus_b = 8'd5;    // ÷5
-        start = 1;
+        in = 8'd15;
+        op_codes = 2'b11;  // opcode 11 = div
+        valid = 1;
         #10;
-        start = 0;
-        wait(done);
-        $display("DIV Test: 25 / 5 = %d (outbus=%d)", 25/5, outbus);
+        valid = 0;
 
-        // Finish simulation
-        #100;
+        wait (ready);
+        $display("DIV result: %d", o);
+
+        #50;
         $finish;
     end
 
 endmodule
+

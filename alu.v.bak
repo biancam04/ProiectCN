@@ -1,102 +1,167 @@
-module alu_top (
-    input wire clk,
-    input wire reset,
-    input wire start,
-    input wire [1:0] opcode,     // 00: add, 01: sub, 10: mul, 11: div
-    input wire [7:0] inbus_a,     // Operand A
-    input wire [7:0] inbus_b,     // Operand B
-    output wire [7:0] outbus,     // ALU result output
-    output wire done              // Operation finished flag
+module alu (
+  input wire [7:0] in,
+  input wire [1:0] op_codes,
+  input wire valid,
+  input wire clk,
+  input wire rst,
+  output reg [7:0] o,
+  output wire ready
 );
 
-    // Internal wires
-    wire [10:0] control;
-    wire [7:0] addsub_out;
-    wire [15:0] booth_out;
-    wire [7:0] div_quotient;
-    wire [7:0] div_remainder;
-    wire [7:0] alu_out_mux;
-    wire done;
-    wire CU_done;
+  // Control signals
+  wire [10:0] c;
 
-    wire Q0, Q_1;
-    wire count;
-    wire div_count;
-    wire [7:0] div_A; // For A7
-    wire A7;
-    
-    // Select count signal depending on operation
-    wire count_mux;
-    assign count_mux = (opcode == 2'b10) ? booth_count : div_count;
-    // Select A7 signal (only needed for division)
-    assign div_A7 = div_A[7];
+  // Internal wires
+  wire [7:0] q, m, a;
+  wire [7:0] outAdder, complementedM;
+  wire [7:0] muxAdderIn, muxQInput, muxAInput;
+  wire muxQ_1, muxASerialIn, muxQSerialIn;
 
-    // Control Unit instantiation
-    control_unit CU (
-        .clk(clk),
-        .reset(reset),
-        .start(start),
-        .opcode(opcode),
-        .Q0(booth_Q0),
-        .Q_1(booth_Q_1),
-        .A7(div_A7),
-        .count(count_mux),
-        .control(control),
-        .done(CU_done)
-    );
+  wire q_1_out;
+  wire [2:0] count;
+  wire aSerialOut, qSerialOut;
 
-    // Adder/Subtractor Datapath instantiation
-    adder_subtractor_datapath ADD_SUB (
-        .clk(clk),
-        .reset(reset),
-        .load(control[0]),
-        .inbus_a(inbus_a),
-        .inbus_b(inbus_b),
-        .sub(opcode[0]),
-        .outbus(addsub_out)
-    );
+  // === Q[-1] ===
+  d_ff Q_minus_one_ff (
+    .clk(clk),
+    .d(muxQ_1),
+    .en(c[2] | c[6]),
+    .rst(rst),
+    .o(q_1_out)
+  );
 
-    // Booth Multiplier Datapath instantiation
-    booth_datapath BOOTH (
-        .clk(clk),
-        .reset(reset),
-        .start(start),
-        .multiplicand(inbus_b),
-        .multiplier(inbus_a),
-        .product(booth_out),
-        .done(done),
-        .count(count),
-        .Q0(Q0),
-        .Q_1(Q_1)
-    );
+  wire [1:0] mode_a;
+  assign mode_a = (c[0] || c[3]) ? 2'b11 :         // Load
+                (c[7])         ? 2'b10 :         // Shift left
+                (c[6])         ? 2'b01 :         // Shift right
+                                 2'b00;          // Hold
 
-    // Restoring Divider Datapath instantiation
-    restoring_divider_datapath DIVIDER (
-        .clk(clk),
-        .reset(reset),
-        .load(control[0]),
-        .dividend(inbus_a),
-        .divisor(inbus_b),
-        .quotient(div_quotient),
-        .remainder(div_remainder),
-        .done(), // divider done not needed separately
-        .count(div_count),
-        .A(div_A) // New output A (to get A[7] for A7)
-    );
+  shift_reg_lr reg_A (
+    .clk(clk),
+    .mode(mode_a),
+    .data_in(outAdder),        // Comes from adder output (muxed via C2)
+    .shift_in_left(a[7]),      // For arithmetic right shift
+    .shift_in_right(q[0]),     // For left shift (A <<, MSB from Q[0])
+    .data_out(a)
+  );
+  
+  wire [1:0] mode_q;
+  assign mode_q = (valid || c[4]) ? 2'b11 :
+                (c[6])           ? 2'b01 :
+                                   2'b00;
 
-    // Output MUX
-    mux4_1_8bit OUTMUX (
-        .d0(addsub_out),
-        .d1(addsub_out),
-        .d2(booth_out[7:0]),
-        .d3(div_quotient),
-        .sel(opcode),
-        .y(alu_out_mux)
-    );
+  shift_reg_lr reg_Q (
+    .clk(clk),
+    .mode(mode_q),
+    .data_in(muxQInput),        // Either input or adder output
+    .shift_in_left(a[0]),       // For shift right (Q <<-- A[0])
+    .shift_in_right(1'b0),      // Not used
+    .data_out(q)
+  );
 
-    assign outbus = alu_out_mux;
+  
+  wire [1:0] mode_m;
+  assign mode_m = c[1] ? 2'b11 : 2'b00;
 
-    // Select proper done flag depending on operation
-    assign done = (opcode == 2'b10) ? booth_done : CU_done;
+  shift_reg_lr reg_M (
+    .clk(clk),
+    .mode(mode_m),
+    .data_in(in),               // From inbus
+    .shift_in_left(1'b0),
+    .shift_in_right(1'b0),
+    .data_out(m)
+  );
+
+
+  // === Complement M ===
+  complement complementM(
+    .in(m),
+    .en(c[5]),
+    .out(complementedM)
+  );
+
+  // === Muxes ===
+  mux2_1_8bit mux_adder_in (
+    .d0(a), .d1(q), .sel(c[2]), .y(muxAdderIn)
+  );
+
+
+  // Mux for Q input: input vs. adder output
+  mux2_1_8bit mux_q_input (
+    .d0(in),
+    .d1(outAdder),
+    .sel(c[4]),
+    .y(muxQInput)
+  );
+
+  // Mux for A input: zero vs adder output
+  mux2_1_8bit mux_a_input (
+    .d0(8'd0),
+    .d1(outAdder),
+    .sel(c[3]),
+    .y(muxAInput)
+  );
+
+  // Mux for Q[-1] serial input
+  mux2_1 mux_q_minus_one (
+    .d0(1'b0),
+    .d1(qSerialOut),
+    .sel(c[6]),
+    .y(muxQ_1)
+  );
+
+  // Serial inputs for shifting
+  mux2_1 mux_serial_a (
+    .d0(a[7]),
+    .d1(qSerialOut),
+    .sel(c[7]),
+    .y(muxASerialIn)
+  );
+
+  mux2_1 mux_serial_q (
+    .d0(1'b0),
+    .d1(aSerialOut),
+    .sel(c[6]),
+    .y(muxQSerialIn)
+  );
+
+  // === Parallel Adder ===
+  adder ALU_Adder (
+    .x(muxAdderIn),
+    .y(complementedM),
+    .ci(c[5]),
+    .en(c[3]|c[4]),
+    .o(outAdder)
+  );
+
+  // === Counter ===
+  counter Count (
+    .clk(clk),
+    .rst(c[0]),
+    .en(c[8]),
+    .o(count)
+  );
+
+  // === Control Unit ===
+  control_unit Control (
+    .clk(clk),
+    .reset(rst),
+    .start(valid),
+    .Q0(q[0]),
+    .Q_1(q_1_out),
+    .A7(a[7]),
+    .count((count == 3'd7)),
+    .opcode(op_codes),
+    .control(c),
+    .done(ready)
+  );
+
+  // === Output Logic ===
+  always @(*) begin
+    if (c[9])      o = a;
+    else if (c[10]) o = q;
+    else           o = 8'd0;
+  end
 
 endmodule
+
