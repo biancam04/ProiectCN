@@ -1,5 +1,3 @@
-`timescale 1ns/1ps
-
 module alu_top_tb;
 
     // Inputs

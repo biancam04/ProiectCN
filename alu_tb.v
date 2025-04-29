@@ -1,5 +1,3 @@
-`timescale 1ns/1ps
-
 module alu_top_tb;
 
     // Inputs
@@ -42,53 +40,49 @@ module alu_top_tb;
         inbus_b = 8'd0;
 
         // Hold reset
-        #10;
+        #20;
         reset = 0;
-        #10;
+        #20;
 
         // ====================
-        // TEST 1: ADDITION
-        // 15 + 10 = 25
+        // TEST 1: ADDITION (15 + 10 = 25)
         // ====================
         inbus_a = 8'd15;
         inbus_b = 8'd10;
         opcode = 2'b00;  // ADD
         #10 start_pulse();
         wait (done);
-        #10;
+        #20;
 
         // ====================
-        // TEST 2: SUBTRACTION
-        // 25 - 10 = 15
+        // TEST 2: SUBTRACTION (25 - 10 = 15)
         // ====================
         inbus_a = 8'd25;
         inbus_b = 8'd10;
         opcode = 2'b01;  // SUB
         #10 start_pulse();
         wait (done);
-        #10;
+        #20;
 
         // ====================
-        // TEST 3: MULTIPLICATION
-        // 5 * 6 = 30
+        // TEST 3: MULTIPLICATION (5 * 6 = 30)
         // ====================
-        inbus_a = 8'd0;  // Booth uses only inbus_b
-        inbus_b = 8'd6;  // Multiplier
+        inbus_a = 8'd5;
+        inbus_b = 8'd6;
         opcode = 2'b10;  // MUL
         #10 start_pulse();
         wait (done);
-        #10;
+        #20;
 
         // ====================
-        // TEST 4: DIVISION
-        // 30 / 5 = 6
+        // TEST 4: DIVISION (30 / 5 = 6)
         // ====================
-        inbus_a = 8'd30;  // Dividend
-        inbus_b = 8'd5;   // Divisor
+        inbus_a = 8'd30;
+        inbus_b = 8'd5;
         opcode = 2'b11;  // DIV
         #10 start_pulse();
         wait (done);
-        #10;
+        #20;
 
         // End simulation
         $stop;
@@ -104,6 +98,3 @@ module alu_top_tb;
     endtask
 
 endmodule
-
-
-

@@ -1,64 +1,58 @@
+// Booth Multiplier Structural Datapath (Fixed)
 module booth_datapath (
     input wire clk,
     input wire reset,
-    input wire [7:0] inbus,
-    input wire [10:0] control,
-    output wire [7:0] outbus,
-    output wire q0,
-    output wire q_1,
-    output wire [2:0] count
+    input wire start,
+    input wire [7:0] multiplicand,  // inbus_b
+    input wire [7:0] multiplier,    // inbus_a
+    output reg [15:0] product,
+    output wire done
 );
-    reg [7:0] A, Q, M;
-    reg Qm1; // Q-1
-    reg [2:0] booth_count; // Booth iteration counter
+    reg [7:0] A, M, Q;
+    reg Q_1;
+    reg [3:0] count;
+    reg busy;
 
-    wire [7:0] adder_out;
-    wire [7:0] complemented_m;
+    // Assign done signal
+    assign done = ~busy;
 
-    assign complemented_m = ~M + 1;
-
-    // Adder for A + M or A + (-M)
-    assign adder_out = (control[4]) ? (A + complemented_m) : (A + M);
-
-    // Expose current Q0 and Q-1
-    assign q0 = Q[0];
-    assign q_1 = Qm1;
-
-    // Booth operation count
-    assign count = booth_count;
-
-    // Select output
-    assign outbus = (control[9]) ? A : ((control[10]) ? Q : 8'b0);
-
+    // State machine logic
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            A <= 8'd0;
-            Q <= 8'd0;
-            M <= 8'd0;
-            Qm1 <= 1'b0;
-            booth_count <= 3'd0;
+            A <= 8'b0;
+            Q <= 8'b0;
+            M <= 8'b0;
+            Q_1 <= 1'b0;
+            count <= 4'd0;
+            busy <= 1'b0;
+            product <= 16'b0;
         end else begin
-            // Control signals from external controller
-            if (control[2]) begin
-                M <= inbus;
-            end
-            if (control[1]) begin
-                Q <= inbus;
-            end
-            if (control[0]) begin
-                A <= adder_out;
-            end
-            if (control[3]) begin
-                Qm1 <= Q[0];
-            end
-            if (control[7]) begin
-                // Arithmetic shift right (A, Q, Q-1)
-                {A, Q, Qm1} <= {A[7], A, Q};
-            end
-            if (control[8]) begin
-                booth_count <= booth_count + 1;
+            if (start) begin
+                A <= 8'b0;
+                Q <= multiplier;
+                M <= multiplicand;
+                Q_1 <= 1'b0;
+                count <= 4'd8;
+                busy <= 1'b1;
+                product <= 16'b0;
+            end else if (busy) begin
+                case ({Q[0], Q_1})
+                    2'b01: A <= A + M;  // A = A + M
+                    2'b10: A <= A - M;  // A = A - M
+                    default: A <= A;    // No operation
+                endcase
+
+                // Arithmetic right shift {A, Q, Q-1}
+                {A, Q, Q_1} <= {A[7], A, Q};
+
+                count <= count - 1;
+                if (count == 4'd1) begin
+                    busy <= 1'b0;  // Finished after 8 shifts
+                    product <= {A, Q};
+                end
             end
         end
     end
 
 endmodule
+

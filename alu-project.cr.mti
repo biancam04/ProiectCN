@@ -19,13 +19,6 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	control_unit
 
-} {} {}} C:/Users/bianc/Desktop/Faculta/CN/adder_substractor_datapath.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/adder_substractor_datapath.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module adder_subtractor_datapath
-
-Top level modules:
-	adder_subtractor_datapath
-
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/restoring_divider_datapath.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/restoring_divider_datapath.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 -- Compiling module restoring_divider_datapath
@@ -33,12 +26,12 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	restoring_divider_datapath
 
-} {} {}} C:/Users/bianc/Desktop/Faculta/CN/booth_datapath.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/booth_datapath.v
+} {} {}} C:/Users/bianc/Desktop/Faculta/CN/adder_substractor_datapath.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/adder_substractor_datapath.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module booth_datapath
+-- Compiling module adder_subtractor_datapath
 
 Top level modules:
-	booth_datapath
+	adder_subtractor_datapath
 
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/alu.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/alu.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
@@ -46,6 +39,13 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 
 Top level modules:
 	alu_top
+
+} {} {}} C:/Users/bianc/Desktop/Faculta/CN/booth_datapath.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/booth_datapath.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module booth_datapath
+
+Top level modules:
+	booth_datapath
 
 } {} {}} C:/Users/bianc/Desktop/Faculta/CN/mux2-1.v {1 {vlog -work work -nocovercells C:/Users/bianc/Desktop/Faculta/CN/mux2-1.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009

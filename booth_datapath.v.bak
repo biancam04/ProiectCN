@@ -1,34 +1,56 @@
 module booth_datapath (
     input wire clk,
     input wire reset,
-    input wire [7:0] inbus,
-    input wire [10:0] control,
-    output wire [7:0] outbus,
-    output wire q0,
-    output wire q_1,
-    output wire [2:0] count
+    input wire start,
+    input wire [7:0] multiplicand,  // inbus_b
+    input wire [7:0] multiplier,    // inbus_a
+    output wire [15:0] product,
+    output wire done
 );
-    wire [7:0] a_out, q_out, m_out, adder_out;
-    wire q_1_out;
-    wire [7:0] mux_m_out;
-    wire [7:0] complemented_m;
+    reg [7:0] A, M, Q;
+    reg Q_1;
+    reg [3:0] count;
+    reg busy;
 
-    register_8bit reg_a (.clk(clk), .reset(reset), .load(control[0]), .d(adder_out), .q(a_out));
-    register_8bit reg_q (.clk(clk), .reset(reset), .load(control[1]), .d(mux_m_out), .q(q_out));
-    register_8bit reg_m (.clk(clk), .reset(reset), .load(control[2]), .d(inbus), .q(m_out));
-    register_1bit reg_q_1 (.clk(clk), .reset(reset), .load(control[3]), .d(q_out[0]), .q(q_1_out));
+    // Assign final product
+    assign product = {A, Q};
+    assign done = ~busy;
 
-    adder_8bit adder (
-        .a(a_out),
-        .b(control[4] ? complemented_m : m_out),
-        .sum(adder_out)
-    );
+    // State machine logic
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            A <= 8'b0;
+            Q <= 8'b0;
+            M <= 8'b0;
+            Q_1 <= 1'b0;
+            count <= 4'd0;
+            busy <= 1'b0;
+            product <= 16'b0;
+        end else begin
+            if (start) begin
+                A <= 8'b0;
+                Q <= multiplier;
+                M <= multiplicand;
+                Q_1 <= 1'b0;
+                count <= 4'd8;
+                busy <= 1'b1;
+                product <= 16'b0;
+            end else if (busy) begin
+                case ({Q[0], Q_1})
+                    2'b01: A <= A + M;  // A = A + M
+                    2'b10: A <= A - M;  // A = A - M
+                    default: A <= A;    // No operation
+                endcase
 
-    assign complemented_m = ~m_out + 1;
-    assign mux_m_out = control[5] ? inbus : q_out;
+                // Arithmetic right shift {A, Q, Q-1}
+                {A, Q, Q_1} <= {A[7], A, Q};
 
-    assign outbus = control[9] ? a_out : (control[10] ? q_out : 8'b0);
-    assign q0 = q_out[0];
-    assign q_1 = q_1_out;
-    assign count = 3'b000;
+                count <= count - 1;
+                if (count == 4'd1) begin
+                    busy <= 1'b0;  // Finished after 8 shifts
+                end
+            end
+        end
+    end
+
 endmodule
